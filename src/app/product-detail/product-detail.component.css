@@ -1,0 +1,37 @@
+.product-detail {
+    margin: 10px 10%;
+}
+
+.product-detail>h2 {
+    text-align: center;
+}
+
+.product-detail-form {
+    width: 50%;
+    margin: 10px 25%;
+}
+
+.product-detail mat-form-field {
+    width: 100%;
+    display: block;
+}
+
+.product-detail-loading {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+@media only screen and (max-width: 576px) {
+    .product-detail-form {
+        width: calc(100% - 10px);
+        margin: 10px 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .product-detail-form {
+        width: 80%;
+        margin: 10px 10%;
+    }
+}

@@ -1,0 +1,26 @@
+.breadcrumds {
+    width: 80%;
+    height: 40px;
+    margin: 20px 10%;
+    font-size: 16px;
+    color: beige;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: linear-gradient(-17deg, #0D2336 30%, #00B2FF 100%);
+}
+
+.breadcrumds a {
+    color: beige !important;
+}
+
+.breadcrumds a:hover {
+    color: blue !important;
+}
+
+@media only screen and (max-width: 576px) {
+    .breadcrumds {
+        width: calc(100% - 10px);
+        margin: 10px 5px;
+    }
+}

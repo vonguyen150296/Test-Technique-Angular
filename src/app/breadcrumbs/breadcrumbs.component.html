@@ -1,0 +1,7 @@
+<div class="breadcrumds">
+    <div class="breadcrumds-item" *ngFor="let item of arrays">
+        <a *ngIf="item.routerLink" [routerLink]="item.routerLink">{{item.name}}</a>
+        <span *ngIf="item.routerLink"> / </span>
+        <span *ngIf="!item.routerLink">{{item.name}}</span>
+    </div>
+</div>

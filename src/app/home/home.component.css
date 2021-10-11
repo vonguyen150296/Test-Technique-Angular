@@ -1,0 +1,86 @@
+.home-container {
+    margin: 10px;
+}
+
+.home-title {
+    margin: 0 0 30px 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.home-title>h2 {
+    font-weight: 600;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.home-title button {
+    height: 50px !important;
+}
+
+.home-products {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.home-products button {
+    margin-right: 5px;
+}
+
+.home-products>mat-card {
+    margin: 5px;
+    width: 100%;
+    border: 2px solid rgb(235, 225, 225);
+}
+
+.home-products>mat-card:hover {
+    border: 2px solid #32CD32;
+    background-color: #F9F9FA;
+}
+
+.home-form {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.home-form::after {
+    clear: right;
+}
+
+.home-form button {
+    height: 51.31px;
+}
+
+.home-loading {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.home-products>p {
+    text-align: center;
+    color: red;
+    font-style: italic;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .home-products>mat-card {
+        width: calc(33.3% - 10px);
+    }
+    .home-container {
+        margin: 10px 30px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .home-products>mat-card {
+        width: calc(25% - 10px);
+    }
+    .home-container {
+        margin: 10px 30px;
+    }
+}

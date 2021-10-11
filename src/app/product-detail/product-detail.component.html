@@ -1,0 +1,36 @@
+<div class="product-detail">
+    <app-breadcrumbs [arrays]="breadcrumbs"></app-breadcrumbs>
+
+    <h2>Modifier le produit</h2>
+    <div class="product-detail-loading" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <form class="product-detail-form" *ngIf="!loading">
+        <mat-form-field appearance="fill">
+            <mat-label>Nom du produit</mat-label>
+            <input name="name" matInput placeholder="Ex. Savoy cabbage" [(ngModel)]="product.name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nom scientifique du produit</mat-label>
+            <input name="scientifiqueName" matInput placeholder="Ex. Brassica oleracea var. sabauda" [(ngModel)]="product.scientificName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Groupe ID</mat-label>
+            <mat-select name="groupID" [(ngModel)]="product.groupId">
+                <mat-option *ngFor="let group of groups" [value]="group.id">{{group.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Sous groupe ID</mat-label>
+            <mat-select name="subGroupId" [(ngModel)]="product.subGroupId">
+                <mat-option *ngFor="let subgroup of subgroups" [value]="subgroup.id">{{subgroup.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="putProduct()">
+            Mettre à jour
+        </button>
+    </form>
+</div>

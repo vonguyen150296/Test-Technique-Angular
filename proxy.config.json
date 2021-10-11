@@ -1,0 +1,12 @@
+{
+    "/products/*": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/products/v1.0": "/products/v1.0",
+            "^/products": ""
+        }
+    }
+}

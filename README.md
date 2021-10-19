@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Etape 1: Run notre serveur java
 
 ## Etape 2: Run angular app
-Run `ng serve`
+Run `ng serve --proxy-config proxy.config.json`
 voir le web app : `http://localhost:4200/`
 
 

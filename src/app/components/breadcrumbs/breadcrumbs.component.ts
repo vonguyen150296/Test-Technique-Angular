@@ -6,12 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumbs.component.css']
 })
 export class BreadcrumbsComponent implements OnInit {
+  
 
-  @Input("arrays") arrays: any;
+  @Input('arrays') arrays: string[];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

@@ -1,0 +1,7 @@
+<div class="breadcrumds">
+    <div class="breadcrumds-item" *ngFor="let item of arrays; let index = index">
+        <a *ngIf="(arrays.length - 1) !== index " routerLink="/{{item}}">{{item}}</a>
+        <span *ngIf="(arrays.length - 1) !== index"> / </span>
+        <span class="item" *ngIf="(arrays.length - 1) === index">{{item}}</span>
+    </div>
+</div>

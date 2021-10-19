@@ -9,12 +9,14 @@
     <form class="product-detail-form" *ngIf="!loading">
         <mat-form-field appearance="fill">
             <mat-label>Nom du produit</mat-label>
-            <input name="name" matInput placeholder="Ex. Savoy cabbage" [(ngModel)]="product.name">
+            <input name="name" matInput placeholder="Ex. Savoy cabbage" [(ngModel)]="product.name" required>
+            <mat-error *ngIf="nameProduct.invalid">You must enter a value!</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Nom scientifique du produit</mat-label>
-            <input name="scientifiqueName" matInput placeholder="Ex. Brassica oleracea var. sabauda" [(ngModel)]="product.scientificName">
+            <input name="scientifiqueName" matInput placeholder="Ex. Brassica oleracea var. sabauda" [(ngModel)]="product.scientificName" required>
+            <mat-error *ngIf="scientificNameProduct.invalid">You must enter a value!</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -29,7 +31,7 @@
                 <mat-option *ngFor="let subgroup of subgroups" [value]="subgroup.id">{{subgroup.name}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <button mat-raised-button color="accent" (click)="putProduct()">
+        <button mat-raised-button id="btnSubmit" color="accent" (click)="putProduct()">
             Mettre à jour
         </button>
     </form>

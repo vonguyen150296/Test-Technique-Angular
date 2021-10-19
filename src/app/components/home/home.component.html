@@ -2,16 +2,16 @@
     <form class="home-form">
         <mat-form-field class="home-full-width" appearance="fill">
             <mat-label>Barre de recherche</mat-label>
-            <input matInput name="keywords" [(ngModel)]="keywords" (keyup)="keyup()">
+            <input matInput name="keywords" [(ngModel)]="keywords" (keyup)="setdata()">
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="search()">
+        <button mat-raised-button color="primary" (click)="searchProducts()">
             <mat-icon aria-hidden="false">search</mat-icon>
             Rechercher
         </button>
     </form>
     <div class="home-title">
         <h2>Liste des produits</h2>
-        <button mat-raised-button color="accent" (click)="postProduct()">
+        <button mat-raised-button id="newProduct" color="accent" (click)="postProduct()">
             <mat-icon aria-hidden="false">add_circle_outline</mat-icon>
             Nouveau Product
         </button>
@@ -21,11 +21,11 @@
     </div>
     <div class="home-products">
         <p *ngIf="listProducts.length === 0 && !loading">Aucun résultat ne correspond à votre recherche!</p>
-        <mat-card *ngFor="let product of listProducts">
+        <mat-card *ngFor="let product of listProducts" class="mat-card">
             <mat-card-title>{{product.name}}</mat-card-title>
             <mat-card-subtitle>{{product.scientificName}}</mat-card-subtitle>
             <mat-card-actions align="end">
-                <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon" (click)="deleteProduct(product.id)">
+                <button mat-mini-fab color="warn" class="btnDelete" aria-label="Example icon button with a delete icon" (click)="deleteProduct(product.id)">
                     <mat-icon>delete</mat-icon>
                 </button>
                 <button mat-mini-fab color="primary" aria-label="Example icon button with a edit icon" routerLink="/product/{{product.id}}">
